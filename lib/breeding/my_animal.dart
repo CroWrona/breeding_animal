@@ -9,12 +9,10 @@ class MyAnimal extends StatefulWidget {
   final int index;
 
   @override
-  State<MyAnimal> createState() => _MyAnimalState(index);
+  State<MyAnimal> createState() => _MyAnimalState();
 }
 
 class _MyAnimalState extends State<MyAnimal> {
-  _MyAnimalState(this.index);
-  final index;
 
   List<Map<String, dynamic>> data_Animals = [];
 
@@ -48,10 +46,10 @@ class _MyAnimalState extends State<MyAnimal> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text('ID : ${data_Animals[index]['id']}', style: TextStyle(fontSize: 25),),
-          Text('ANIMAL : ${data_Animals[index]['animal']}', style: TextStyle(fontSize: 25),),
-          Text('NAME : ${animals[data_Animals[index]['animal']].name}', style: TextStyle(fontSize: 25),),
-          Container(height: 100,width: 100, color: animals[data_Animals[index]['animal']].color,)
+          Text('ID : ${data_Animals[widget.index]['id']}', style: const TextStyle(fontSize: 25),),
+          Text('ANIMAL : ${data_Animals[widget.index]['animal']}', style: const TextStyle(fontSize: 25),),
+          Text('NAME : ${animals[data_Animals[widget.index]['animal']].name}', style: const TextStyle(fontSize: 25),),
+          Container(height: 100,width: 100, color: animals[data_Animals[widget.index]['animal']].color,)
         ],
       ),
     );
